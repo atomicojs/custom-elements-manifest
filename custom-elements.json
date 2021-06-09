@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "0.1.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/component.js",
+      "declarations": [
+        {
+          "members": [
+            {
+              "name": "age",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "array"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "Remo",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "age",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "array"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Component",
+          "declaration": {
+            "name": "Component",
+            "module": "src/component.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "my-wc",
+          "declaration": {
+            "name": "Component",
+            "module": "src/component.js"
+          }
+        }
+      ]
+    }
+  ]
+}
