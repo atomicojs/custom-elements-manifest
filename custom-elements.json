@@ -4,43 +4,59 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "src/component.js",
+      "path": "test/atomico.ts",
       "declarations": [
         {
+          "slots": [],
+          "events": [
+            {
+              "name": "MyEvent",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "description of my event"
+            }
+          ],
           "members": [
             {
               "name": "age",
               "type": {
                 "text": "number"
-              }
+              },
+              "description": "description of my prop"
             },
             {
               "name": "value",
               "type": {
                 "text": "array"
-              }
+              },
+              "description": "description of my prop"
             }
           ],
-          "events": [
-            {
-              "name": "Remo",
-              "type": {
-                "text": "CustomEvent"
-              }
-            }
-          ],
+          "cssParts": [],
           "attributes": [
             {
               "name": "age",
               "type": {
                 "text": "number"
-              }
+              },
+              "description": "description of my prop"
             },
             {
               "name": "value",
               "type": {
                 "text": "array"
-              }
+              },
+              "description": "description of my prop"
+            }
+          ],
+          "cssProperties": [
+            {
+              "type": {
+                "text": "color"
+              },
+              "description": "description of my custom property",
+              "name": "--text-color"
             }
           ]
         }
@@ -51,7 +67,7 @@
           "name": "Component",
           "declaration": {
             "name": "Component",
-            "module": "src/component.js"
+            "module": "test/atomico.ts"
           }
         },
         {
@@ -59,7 +75,7 @@
           "name": "my-wc",
           "declaration": {
             "name": "Component",
-            "module": "src/component.js"
+            "module": "test/atomico.ts"
           }
         }
       ]

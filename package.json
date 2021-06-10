@@ -1,20 +1,48 @@
 {
-  "name": "ts-doc",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "custom-elements-manifest analyze"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.1.19",
-    "typescript": "^4.3.2"
-  },
-  "dependencies": {
-    "atomico": "^1.23.1"
-  },
-  "customElements": "custom-elements.json"
+    "name": "@atomico/custom-elements-manifest",
+    "version": "0.0.0",
+    "description": "plugin for @custom-elements-manifest/analyzer that adds support to Atomico",
+    "type": "module",
+    "exports": {
+        ".": "./src/plugin.mjs"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "types": "tsc",
+        "clean": "rm custom-elements.json",
+        "analyze": "custom-elements-manifest analyze",
+        "test": "npm run clean && npm run analyze && ava"
+    },
+    "keywords": [
+        "atomico",
+        "webcomponents",
+        "custom-elements.json"
+    ],
+    "author": "UpperCod",
+    "license": "ISC",
+    "devDependencies": {
+        "@custom-elements-manifest/analyzer": "^0.1.19",
+        "ava": "^3.15.0",
+        "typescript": "^4.3.2"
+    },
+    "dependencies": {
+        "@uppercod/jsdoc": "latest",
+        "atomico": "latest"
+    },
+    "peerDependencies": {
+        "@custom-elements-manifest/analyzer": "^0.1.19",
+        "typescript": "^4.3.2"
+    },
+    "customElements": "custom-elements.json",
+    "ava": {
+        "files": [
+            "test/**/*.test.js"
+        ]
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": false
+    }
 }

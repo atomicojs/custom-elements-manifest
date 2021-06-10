@@ -1,0 +1,84 @@
+{
+    "schemaVersion": "0.1.0",
+    "readme": "",
+    "modules": [
+        {
+            "kind": "javascript-module",
+            "path": "test/atomico.ts",
+            "declarations": [
+                {
+                    "slots": [],
+                    "events": [
+                        {
+                            "name": "MyEvent",
+                            "type": {
+                                "text": "CustomEvent"
+                            },
+                            "description": "description of my event"
+                        }
+                    ],
+                    "members": [
+                        {
+                            "name": "age",
+                            "type": {
+                                "text": "number"
+                            },
+                            "description": "description of my prop"
+                        },
+                        {
+                            "name": "value",
+                            "type": {
+                                "text": "array"
+                            },
+                            "description": "description of my prop"
+                        }
+                    ],
+                    "cssParts": [],
+                    "attributes": [
+                        {
+                            "name": "age",
+                            "type": {
+                                "text": "number"
+                            },
+                            "description": "description of my prop"
+                        },
+                        {
+                            "name": "value",
+                            "type": {
+                                "text": "array"
+                            },
+                            "description": "description of my prop"
+                        }
+                    ],
+                    "cssProperties": [
+                        {
+                            "type": {
+                                "text": "color"
+                            },
+                            "description": "description of my custom property",
+                            "name": "--text-color"
+                        }
+                    ]
+                }
+            ],
+            "exports": [
+                {
+                    "kind": "js",
+                    "name": "Component",
+                    "declaration": {
+                        "name": "Component",
+                        "module": "test/atomico.ts"
+                    }
+                },
+                {
+                    "kind": "custom-element-definition",
+                    "name": "my-wc",
+                    "declaration": {
+                        "name": "Component",
+                        "module": "test/atomico.ts"
+                    }
+                }
+            ]
+        }
+    ]
+}

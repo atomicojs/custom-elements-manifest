@@ -1,7 +1,7 @@
-import myAwesomePlugin from "./plugin.mjs";
+import myAwesomePlugin from "./src/plugin.mjs";
 
 export default {
-  globs: ["src/**/*.js"],
-  dev: true,
-  plugins: [myAwesomePlugin()],
+    globs: ["test/atomico.ts"],
+    dev: true,
+    plugins: [myAwesomePlugin()],
 };
