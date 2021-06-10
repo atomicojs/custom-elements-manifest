@@ -92,7 +92,7 @@ export default () => ({
                                               type,
                                               description: getComment(jsDoc),
                                           }
-                                        : properties.reduce(
+                                        : properties?.reduce(
                                               (
                                                   schema,
                                                   {
@@ -225,36 +225,40 @@ export default () => ({
                     /**
                      * Use the object props of the functions to complete the declarations
                      */
-                    schema?.props?.forEach(([name, schema]) => {
-                        const type = {
-                            text: schema.type.toLowerCase(),
-                        };
-                        const { description } = schema;
+                    schema?.props
+                        ?.filter(([, schema]) => schema)
+                        .forEach(([name, schema]) => {
+                            const type = {
+                                text: schema?.type?.toLowerCase(),
+                            };
+                            const { description } = schema;
 
-                        declarations.members.push({
-                            name,
-                            type,
-                            description,
-                        });
-
-                        declarations.attributes.push({
-                            name:
-                                schema.attr ||
-                                name.replace(/([A-Z])/g, "-$1").toLowerCase(),
-                            type,
-                            description,
-                        });
-
-                        if (schema.event) {
-                            declarations.events.push({
-                                name: schema.event.type,
-                                type: {
-                                    text: schema.event.base,
-                                },
-                                description: schema.event.description,
+                            declarations.members.push({
+                                name,
+                                type,
+                                description,
                             });
-                        }
-                    });
+
+                            declarations.attributes.push({
+                                name:
+                                    schema.attr ||
+                                    name
+                                        .replace(/([A-Z])/g, "-$1")
+                                        .toLowerCase(),
+                                type,
+                                description,
+                            });
+
+                            if (schema.event) {
+                                declarations.events.push({
+                                    name: schema.event.type,
+                                    type: {
+                                        text: schema.event.base,
+                                    },
+                                    description: schema.event.description,
+                                });
+                            }
+                        });
                     return declarations;
                 }
             }
