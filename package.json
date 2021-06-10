@@ -1,6 +1,6 @@
 {
     "name": "@atomico/custom-elements-manifest",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "plugin for @custom-elements-manifest/analyzer that adds support to Atomico",
     "type": "module",
     "exports": {
