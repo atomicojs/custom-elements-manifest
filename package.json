@@ -13,7 +13,8 @@
         "types": "tsc",
         "clean": "rm custom-elements.json",
         "analyze": "custom-elements-manifest analyze",
-        "test": "npm run clean && npm run analyze && ava"
+        "test": "npm run clean && npm run analyze && ava",
+        "prepublishOnly": "npm run test"
     },
     "keywords": [
         "atomico",
