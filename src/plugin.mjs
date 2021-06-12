@@ -3,6 +3,7 @@ import { parseComment } from "@uppercod/jsdoc";
 const getComment = (jsDoc) => jsDoc?.find(({ comment }) => comment)?.comment;
 
 export default () => ({
+    name: 'atomico',
     analyzePhase({ ts, node, context }) {
         switch (node.kind) {
             /**
